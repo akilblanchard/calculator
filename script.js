@@ -59,16 +59,15 @@ decimalBtn.addEventListener ("click", () => {
     }
 })
 
-const updateDisplay = (value) => {
+const updateDisplay = (value) =>{
     display.textContent = value;
-}
-
+} 
 numberBtn.forEach((button) =>{
     button.addEventListener("click", () =>{  
         const buttonValue = button.textContent;
         if (operator === null ){
             num1 += buttonValue;
-            display.textContent = num1;
+            updateDisplay(num1);
         } else{
             num2 += buttonValue;
             updateDisplay(num2);
@@ -93,8 +92,3 @@ clearBtn.addEventListener("click", () =>{
     decimal = "";
 })
 
-
-function operate(a, operator, b) {
-  if (operator === "+") return add(a, b);
-  if (operator === "-") return subtract(a, b);
-} 
